@@ -21,7 +21,7 @@ if __name__ == "__main__":
   print(f"Running {day_dir} puzzle {args.puzzle}..")
 
   solution = None
-  with open(f"day01/data_{"test" if args.test else "real"}.txt") as f:
+  with open(f"{day_dir}/data_{"test" if args.test else "real"}.txt") as f:
     solution = getattr(module, f"solve_puzzle_{args.puzzle}")(f.readlines())
 
   if args.test:
