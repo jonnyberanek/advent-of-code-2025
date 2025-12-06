@@ -1,0 +1,8 @@
+#!/bin/bash
+day=$1
+
+stars=$(($day * 2))
+
+sed -i "/stars_badge/c"'!'"[stars_badge](https://img.shields.io/badge/stars-$stars-gold)" README.md
+git add .
+git commit -m "Day $day"
