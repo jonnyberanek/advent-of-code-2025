@@ -22,7 +22,8 @@ if __name__ == "__main__":
 
   solution = None
   with open(f"{day_dir}/data_{"test" if args.test else "real"}.txt") as f:
-    solution = getattr(module, f"solve_puzzle_{args.puzzle}")(f.readlines())
+    input = [line.rstrip() for line in f.readlines()]
+    solution = getattr(module, f"solve_puzzle_{args.puzzle}")(input)
 
   if args.test:
     expected = getattr(module, f"PUZZLE_{args.puzzle}_EXPECTS")
