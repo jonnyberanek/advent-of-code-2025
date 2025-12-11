@@ -2,6 +2,8 @@ import importlib
 from sys import argv
 from argparse import ArgumentParser
 
+from util import context
+
 parser = ArgumentParser(
   prog="aoc",
   description="Advent of Code 2025 Runner"
@@ -19,6 +21,9 @@ if __name__ == "__main__":
   module = importlib.import_module(day_dir)
 
   print(f"Running {day_dir} puzzle {args.puzzle}..")
+
+  if args.test:
+    context.is_test = True
 
   solution = None
   with open(f"{day_dir}/data_{"test" if args.test else "real"}.txt") as f:
