@@ -1,8 +1,10 @@
 #!/bin/bash
 day=$1
 
-stars=$(($day * 2))
+source config.cfg
+
+stars=$(($day * 2 - $skipped_stars))
 
 sed -i "/stars_badge/c"'!'"[stars_badge](https://img.shields.io/badge/stars-$stars-gold)" README.md
 git add .
-git commit -m "Day $day"
+echo git commit -m "Day $day" | clip
