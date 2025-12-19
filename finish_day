@@ -7,4 +7,4 @@ stars=$(($day * 2 - $skipped_stars))
 
 sed -i "/stars_badge/c"'!'"[stars_badge](https://img.shields.io/badge/stars-$stars-gold)" README.md
 git add .
-echo git commit -m "Day $day" | clip
+git commit -m "Day $day"
