@@ -1,6 +1,5 @@
 from dataclasses import dataclass, field
-from pprint import pprint
-from typing import Any, Self, Sequence
+from typing import Any
 
 PUZZLE_1_EXPECTS = 5
 PUZZLE_2_EXPECTS = 2

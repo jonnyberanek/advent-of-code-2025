@@ -1,5 +1,4 @@
-from dataclasses import dataclass
-from typing import Any, Self
+from typing import Any
 
 PUZZLE_1_EXPECTS = 13
 PUZZLE_2_EXPECTS = 43

@@ -109,12 +109,6 @@ def solve_puzzle_1(input: list[str]) -> Any:
 
   return len(discover_tree(parse_manifold(input), set()))
 
-
-      
-@dataclass
-class Box[T]:
-  value: T
-
 def solve_puzzle_2(input: list[str]) -> Any:
   # Keeps track of nodes whose path total have already be calculated
   # Needs to be done this way to optimize not going down every single path

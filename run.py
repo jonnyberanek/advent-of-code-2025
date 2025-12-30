@@ -13,8 +13,6 @@ parser = ArgumentParser(
 parser.add_argument("day", type=int)
 parser.add_argument("puzzle", type=int, choices=[1,2])
 parser.add_argument("-t", "--test", action='store_true')
-parser.add_argument("-u", "--unique-tests", action='store_true')
-
 
 def get_data_filename(dir, is_test, puzzle_num):
   data_path = dir + "/data_{}.txt"

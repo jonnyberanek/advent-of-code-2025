@@ -1,6 +1,4 @@
-from dataclasses import dataclass
 from functools import reduce
-from pprint import pprint
 from typing import Any, Callable, NamedTuple
 
 from util import context
@@ -13,33 +11,8 @@ class Point(NamedTuple):
   y: int
   z: int
 
-@dataclass
-class PointPair():
-  p1: Point
-  p2: Point
-
 type Circuit = set[str]
-
-  # def __hash__(self) -> int:
-  #   lesser = self.p1
-  #   greater = self.p2
-  #   if self.p2.x < self.p1.x or (
-  #     self.p2.x == self.p1.x and self.p2.y < self.p1.y
-  #   ) or (
-  #     self.p2.x == self.p1.x and self.p2.y == self.p1.y and self.p2.z < self.p1.z
-  #   ):
-  #     lesser = self.p2
-  #     greater = self.p1
-  #   return f"{lesser}_{greater}"
-
-@dataclass
-class Ref[T]:
-  item: T
-
-  def __hash__(self) -> int:
-    return id(self.item)
   
-
 def parse_points(input: list[str]) -> list[Point]:
   return list(set((Point(*(int(c) for c in line.split(","))) for line in input)))
 
@@ -47,7 +20,7 @@ def parse_points(input: list[str]) -> list[Point]:
 def calc_magnitude(p1: Point, p2: Point):
   return abs(reduce(
     lambda a, b: a + b,
-    [ (p2[i]-p1[i]) ** 2 for i in range(len(p1))]
+    [ (p2[i]-p1[i]) ** 2 for i in range(len(p1)) ]
   ))
 
 def join_key(p1: Point, p2: Point) -> str:
